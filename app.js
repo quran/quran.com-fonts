@@ -20,6 +20,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
+app.get('/ping', function(req, res, next) {
+  res.send(200, 'OK')
+});
+
 // CORS header to allow serving fonts from a different origin
 app.get('/fonts/*', function(req, res, next){
   res.header('Access-Control-Allow-Origin', '*');    
